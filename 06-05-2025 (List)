@@ -1,1 +1,22 @@
+#soal1
+def cari_pasangan(list, target):
+    left = 0
+    right = len(list) - 1
+    
+    while left < right:
+        total = (list[left] + list[right])
+        
+        if total == target:
+            print(f"{left} dan {right}")
+            return
+        
+        elif total < target:
+            left += 1
+        
+        else:
+            right -= 1
+    
+    print("Tidak ada")
+
+#soal2
 
