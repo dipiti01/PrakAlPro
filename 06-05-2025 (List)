@@ -19,4 +19,23 @@ def cari_pasangan(list, target):
     print("Tidak ada")
 
 #soal2
+def filter_duplikasi(list, batas):
+    
+    frekuensi = {}
+    hasil = []
+    
+    for angka in list:
+        if angka not in frekuensi:
+            frekuensi[angka] = 0
+        
+        if frekuensi[angka] < batas:
+            hasil.append(angka)
+            frekuensi[angka] += 1
+    
+    print(hasil)
+
+#pertanyaan
+#soal1
+#soal2
+bagaimana jika ingin menambah dengan menghapus duplikat dan mengurutkan angkanya (kecil -> besar, besar -> kecil)
 
