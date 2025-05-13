@@ -33,3 +33,29 @@ print(counts)
 
 #cara buka file di cmd
 python namafile.py
+
+#soalGuided1
+def nilai_terendah(khs):
+    nilaiMin = min(khs.values())
+    
+    hasil = [matakuliah for matakuliah, nilai in khs.items() if nilai == nilaiMin]
+    
+    return sorted(hasil)
+
+#soalGuided2
+def dictMerger(*dictionaries):
+    single = {}
+    many = {}
+    
+    for d in dictionaries:
+        for key, value in d.items():
+            if key in single:
+                many[key] = [single[key], value]
+                del single[key]
+            elif key in many:
+                many[key].append(value)
+            else:
+                single[key] = value
+    
+    many.update(single)
+    return many
