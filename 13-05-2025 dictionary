@@ -1,0 +1,35 @@
+#contoh1
+words = "brontosaurus adalah dinosaurus"
+d = dict()
+for c in words:
+    if c not in d: #angka yang duplikat akan masuk ke else
+        d[c] = 1
+    else:
+        d[c] = d[c] + 1
+
+print(d)
+
+#contoh2 menghitung frekuensi kemunculan kata dengan mengakses file
+fname = input('Enter the file name: ')
+try:
+   fhand = open(fname)
+except:
+   print('File cannot be opened:', fname)
+   exit()
+
+counts = dict()
+for line in fhand:
+   words = line.split()
+   for word in words:
+     if word not in counts:
+        counts[word] = 1
+     else:
+        counts[word] += 1
+
+print(counts)
+
+#contoh4 halaman 8 modul
+#
+
+#cara buka file di cmd
+python namafile.py
