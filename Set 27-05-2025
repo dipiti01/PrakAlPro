@@ -1,0 +1,115 @@
+cobaInt = {1,2,3,4,5,6,7,8,9,0}
+print(cobaInt)
+cobaList = [1,2,3,4,5,6,7,8,9,0]
+print(cobaList)
+cobaStr = {"1","2","3","4","5","6","7","8","9","0"}
+print(cobaStr)
+
+for i in coba:
+    print (i)
+
+#
+coba = {"1","2","3","4","5","6","7","8","9","0"}
+print(coba)
+
+coba.remove(0)
+coba.add(10)
+print(coba)
+
+#Guided1
+def cekKarakter(kalimat):
+    hurufDitemukan = set(kalimat.lower())
+    
+    semuaHuruf = set("abcdefghijklmnopqrstuvwxyz")
+    
+    if semuaHuruf.issubset(hurufDitemukan):
+        print("Kalimat tersebut memiliki semua huruf")
+    else:
+        print("Kalimat tersebut tidak memiliki semua huruf")
+#test case
+kalimat = "the quick brown fox jumps over the lazy dog"
+cekKarakter(kalimat)
+	
+kalimat = "the quick brown fox jumps over the lazy cat"
+cekKarakter(kalimat)
+
+kalimat = "We promptly judged antique ivory buckles for the next prize"
+cekKarakter(kalimat)
+
+kalimat = "Farmer jack realized that big yellow quilts were expensive"
+cekKarakter(kalimat)
+
+#Guided2
+def daftar_tidak_sama(angka1, angka2, batas):
+    kelipatan1 = set(range(angka1, batas, angka1))
+    kelipatan2 = set(range(angka2, batas, angka2))
+    
+    tidakSama = kelipatan1.symmetric_difference(kelipatan2)
+    
+    print(len(tidakSama))
+
+#test case
+daftar_tidak_sama(7, 3, 30)
+
+daftar_tidak_sama(11, 2, 20)
+
+daftar_tidak_sama(4, 29, 50)
+
+daftar_tidak_sama(4, 4, 100)
+
+daftar_tidak_sama(2, 3, 1000)
+
+daftar_tidak_sama(5, 10, 400)
+
+daftar_tidak_sama(90, 10, 4000)
+
+#Guided3
+def kata_unik_spesial(kalimat1, kalimat2):
+    kata1 = kalimat1.split()
+    kata2 = kalimat2.split()
+    gabungan = kata1 + kata2
+    hitung = {}
+    
+    for kata in gabungan:
+        if kata in hitung:
+            hitung[kata] += 1
+        else:
+            hitung[kata] = 1
+            
+    unikSpesial = set()
+    for kata, jumlah in hitung.items():
+        if jumlah == 1:
+            unikSpesial.add(kata)
+        elif jumlah == 2:
+            unikSpesial.add(kata*2)
+            
+    return unikSpesial
+
+#test case
+hasil = kata_unik_spesial('saya mau makan', 'saya mau mandi')
+print(len(hasil))
+print(sorted(hasil))
+
+hasil = kata_unik_spesial('psbb membuat saya bosan', 'ibu saya sedang membuat roti')
+print(len(hasil))
+print(sorted(hasil))
+
+hasil = kata_unik_spesial('adik saya artis tiktok sedangkan saya pemain game', 'tiktok sukses besar di asia')
+print(len(hasil))
+print(sorted(hasil))
+
+hasil = kata_unik_spesial('alpro', 'alpro')
+print(len(hasil))
+print(sorted(hasil))
+
+hasil = kata_unik_spesial('dia positif covid-19', 'jono beli bakso')
+print(len(hasil))
+print(sorted(hasil))
+
+hasil = kata_unik_spesial('dan', 'korea selatan dan vietnam sudah berhasil menekan covid-19 dengan strategi lockdown')
+print(len(hasil))
+print(sorted(hasil))
+
+hasil = kata_unik_spesial('kucing hitam kuning belang itu mencuri ikan goreng ibu saya yang baru saja diangkat', 'belang')
+print(len(hasil))
+print(sorted(hasil))
